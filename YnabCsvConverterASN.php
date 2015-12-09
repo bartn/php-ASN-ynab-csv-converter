@@ -6,7 +6,7 @@ error_reporting(E_ERROR);
 if ($argc < 2)
 {
   echo "\n";
-  echo "usage:\n php YnabCsvConverter.php ~/<directory>/transactions.txt\n";
+  echo "usage:\n php YnabCsvConverter.php ~/<directory>/asnexport.csv\n";
   echo "\n";
   exit();
 }
@@ -88,8 +88,6 @@ class YnabCsvConverter extends stdClass
 		$ynab_line->memo 	 = trim($this->_getDescription($csv_line));
 		$ynab_line->outflow  = '';
 		$ynab_line->inflow   = '';
-		
-
 
 		if (0 === strpos($csv_line[10], '-')) {
 			$csv_line[10] = substr($csv_line[10], 1);

@@ -1,8 +1,6 @@
 #!/usr/bin/php
 <?php
-
 error_reporting(E_ERROR);
-
 if ($argc < 2)
 {
   echo "\n";
@@ -10,17 +8,15 @@ if ($argc < 2)
   echo "\n";
   exit();
 }
-
 $converter = new YnabCsvConverter();
 $converter->convert($argv[1]);
-
 class YnabCsvConverter extends stdClass
 {
 	private $_data;
 	
 	private $_accounts;	
 	
-	private $_exportDirectory = '~/Desktop/';
+	private $_exportDirectory = '/Users/bartnijssen/Desktop/';
 	
 	public function convert($filename)
 	{
