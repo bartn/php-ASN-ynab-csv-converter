@@ -10,3 +10,4 @@ Based on the Rabobank script by @EddoKloosterman I've made some changes so it wo
 ```php YnabCsvConverterASN.php ~/Downloads/yourASNexport.csv```
 3. The script will create a new .csv file on your Desktop.
 4. Import that file in YNAB.
+

@@ -15,8 +15,11 @@ class YnabCsvConverter extends stdClass
 	private $_data;
 	
 	private $_accounts;	
-	
-	private $_exportDirectory = '/Users/bartnijssen/Desktop/';
+
+	/** Please update the following export directory path to your local preference
+	 *  Unfortunately the ~ isn't supported in PHP without a lot of rework
+	 */
+	private $_exportDirectory = '/';
 	
 	public function convert($filename)
 	{
