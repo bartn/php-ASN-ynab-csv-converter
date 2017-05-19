@@ -19,7 +19,7 @@ class YnabCsvConverter extends stdClass
 	/** Please update the following export directory path to your local preference
 	 *  Unfortunately the ~ isn't supported in PHP without a lot of rework
 	 */
-	private $_exportDirectory = '/';
+	private $_exportDirectory = '/Users/bartnijssen/Desktop/';
 	
 	public function convert($filename)
 	{
@@ -155,17 +155,29 @@ class YnabCsvConverter extends stdClass
 		{
 			case "ba": // betaalautomaat
 			case "ga": // geldautomaat
+				if (!$csv_line[9]){
+					return $csv_line[10];
+				} else {
 				return $csv_line[9] . " - " . $csv_line[10];
+			}
 				break;
 			case "tb": // spaaropdracht?
 			case "ei": // europese incasso
 			case "cb": // crediteuren betaling (geld ontvangen)
 			case "bg": // betaling
 			case "db": // betaling aan bank
+				if (!$csv_line[5]){
+					return $csv_line[6];
+				} else {
 				return $csv_line[5] . " - " . $csv_line[6];
+				}	
 				break;
 			default:
+				if (!$csv_line[5]){
+					return $csv_line[10];
+				} else {
 				return $csv_line[5] . " - " . $csv_line[10];
+				}
 		}
 	}
 	
